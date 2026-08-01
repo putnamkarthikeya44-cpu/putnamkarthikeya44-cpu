@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grand Finale</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    background: black;
+  }
+
+  #finale{
+
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    box-sizing:border-box;
+
+    background:black;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:1rem;
+
+}
+
+.content{
+
+    position:relative;
+    z-index:5;
+
+    width:min(90%, 900px);
+    max-width:900px;
+    max-height:100vh;
+    box-sizing:border-box;
+    padding:1rem;
+
+    text-align:center;
+
+    color:white;
+
+    font-family:Georgia,serif;
+    overflow-y:auto;
+    overflow-x:hidden;
+
+}
+
+.line{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:fadeUp 2s forwards;
+
+    font-size:clamp(0.95rem, 1.1vw + 0.7rem, 1.2rem);
+
+    line-height:1.5;
+
+    margin:12px 0;
+    word-wrap:break-word;
+    overflow-wrap:anywhere;
+
+}
+
+.line:nth-child(1){animation-delay:1s;}
+.line:nth-child(2){animation-delay:3s;}
+.line:nth-child(3){animation-delay:5s;}
+.line:nth-child(4){animation-delay:7s;}
+.line:nth-child(5){animation-delay:10s;}
+.line:nth-child(6){animation-delay:12s;}
+.line:nth-child(7){animation-delay:16s;}
+.line:nth-child(8){animation-delay:18s;}
+.line:nth-child(9){animation-delay:20s;}
+.line:nth-child(10){animation-delay:23s;}
+
+.final{
+
+    opacity:0;
+
+    animation:fadeUp 2s forwards;
+
+    animation-delay:24s;
+
+    font-size:clamp(1.4rem, 2.2vw + 1rem, 2.5rem);
+    margin:1rem 0;
+
+    color:rgb(250, 199, 154);
+
+    text-shadow:0 0 25px rgb(250, 199, 154);
+
+}
+
+.thanks{
+
+    opacity:0;
+
+    animation:fadeUp 2s forwards;
+
+    animation-delay:27s;
+
+    font-size:clamp(1.1rem, 1.6vw + 0.8rem, 1.7rem);
+    margin-top:0.75rem;
+
+    color:gold;
+
+    text-shadow:0 0 20px gold;
+
+}
+
+@media (max-width: 768px) {
+    #finale {
+        padding: 0.75rem;
+        align-items:flex-start;
+    }
+
+    .content {
+        width:100%;
+        padding:0.75rem;
+    }
+
+    .line {
+        margin:10px 0;
+        line-height:1.4;
+    }
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+canvas{
+
+    position:absolute;
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:1;
+
+}
+</style>
+<body>
+<section id="finale">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <p class="line">
+            🌸 Happy Birthday, Athamma! 🌸
+        </p>
+
+        <p class="line">
+          As this storybook comes to an end, one thing becomes beautifully clear...
+        </p>
+
+        <p class="line">
+           This was never just a collection of pages or photographs. 
+        </p>
+
+        <p class="line">
+            It is a small tribute to a wonderful person who has filled our lives with kindness, warmth, laughter, and unforgettable memories.   
+        </p>
+
+        <p class="line">
+           Every chapter in this book represents a moment worth cherishing, but your real story is far greater than words could ever capture.
+        </p>
+        <p class="line">
+           Every smile you've shared, every hand you've held, every piece of advice you've given, and every act of love has left a lasting mark on the hearts of everyone fortunate enough to know you.  
+        </p>
+         <p class="line">
+            On this special day, we don't just celebrate another birthday—we celebrate you.
+        </p>
+         <p class="line">
+           We celebrate your strength, your generosity, your beautiful heart, and the happiness you bring wherever you go.
+        </p>
+        <p class="line">
+           May the coming year bless you with good health, endless joy, peaceful days, exciting adventures, and countless reasons to smile.
+        </p>
+        <p class="line">
+           Thank you for being such an important part of our family and for making our lives brighter simply by being yourself.
+        </p>
+        <h1 class="final">
+              May you bring colours into our lives just like this fireworks 
+            </h1>
+         <h2 class="thanks">
+              ❤️ With all our love, Your Family ❤️   
+        </h2>
+       
+    </div>
+
+    <canvas id="fireworks"></canvas>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/index.umd.js"></script>
+<script>
+
+const container=document.getElementById("finale");
+
+const fireworks=new Fireworks.default(container,{
+
+    autoresize:true,
+
+    opacity:0.5,
+
+    acceleration:1.03,
+
+    friction:0.97,
+
+    gravity:1.2,
+
+    particles:90,
+
+    traceLength:3,
+
+    traceSpeed:10,
+
+    explosion:7,
+
+    intensity:30,
+
+    flickering:40,
+
+    hue:{
+        min:0,
+        max:360
+    }
+
+});
+
+//Start when the last message begins
+setTimeout(()=>{
+
+    fireworks.start();
+
+},23000);
+
+//Stop after 15 seconds
+setTimeout(()=>{
+
+    fireworks.stop();
+
+},38000);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,880 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:'Cormorant Garamond', serif;
+
+    background:#24170d;
+
+    color:#2b2116;
+
+    height:100vh;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#5d4428 0%,#2c1d13 45%,#140d09 100%);
+
+    z-index:-5;
+
+}
+
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle,#ffffff18 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.30;
+
+}
+
+
+/* =====================================================
+   FLOATING PARTICLES
+===================================================== */
+
+.floating-particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+
+.floating-particles span{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.35;
+
+}
+
+
+/* =====================================================
+   BOOK CONTAINER
+===================================================== */
+
+.book-container{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    perspective:2500px;
+
+}
+
+
+/* =====================================================
+   BOOK
+===================================================== */
+
+.book{
+
+    position:relative;
+
+    width:950px;
+
+    height:640px;
+
+    transform-style:preserve-3d;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    background:#f5ebd4;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)),
+
+    url("https://www.transparenttextures.com/patterns/old-paper.png");
+
+    border-radius:10px;
+
+    padding:60px;
+
+    box-shadow:
+
+    0 18px 40px rgba(0,0,0,.45);
+
+    transform-origin:left center;
+
+    backface-visibility:hidden;
+
+    transition:1s;
+
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.cover{
+
+    background:
+
+    linear-gradient(145deg,#5d3217,#2d1709);
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+
+.cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border:3px solid rgba(255,215,130,.35);
+
+    border-radius:8px;
+
+}
+
+
+.cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:70px;
+
+    width:8px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    to right,
+
+    #7d4b25,
+
+    #c08945,
+
+    #6a3818
+
+    );
+
+}
+
+
+/* =====================================================
+   COVER CONTENT
+===================================================== */
+
+.cover-overlay{
+
+    text-align:center;
+
+    z-index:2;
+
+    max-width:650px;
+
+}
+
+
+.cover h1{
+
+    font-family:'Cinzel', serif;
+
+    font-size:2rem;
+
+    letter-spacing:3px;
+
+    color:#f9d98c;
+
+}
+
+
+.cover h2{
+
+    margin-top:25px;
+
+    font-size:3.6rem;
+
+    font-family:'Cinzel', serif;
+
+    color:white;
+
+}
+
+
+.cover p{
+
+    margin-top:30px;
+
+    font-size:1.3rem;
+
+    line-height:1.8;
+
+    color:#efe1c8;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.cover button{
+
+    margin-top:45px;
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:#d9b267;
+
+    color:#3d2411;
+
+    font-size:1.1rem;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+}
+
+
+.cover button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 10px 20px rgba(0,0,0,.35);
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+
+    text-align:center;
+
+    max-width:700px;
+
+}
+
+
+.content h1{
+
+    font-size:3rem;
+
+    color:#5d3217;
+
+    margin-bottom:25px;
+
+    font-family:'Cinzel', serif;
+
+}
+
+
+.content p{
+
+    font-size:1.45rem;
+
+    line-height:1.8;
+
+    color:#4b3b30;
+
+}
+
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+.image{
+
+    margin-bottom:30px;
+
+}
+
+
+.image img{
+
+    width:300px;
+
+    height:300px;
+
+    object-fit:cover;
+
+    border:10px solid white;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.25);
+
+    transform:rotate(-3deg);
+
+    transition:.4s;
+
+}
+
+
+.image img:hover{
+
+    transform:
+
+    rotate(0deg)
+
+    scale(1.05);
+
+}
+/* =====================================================
+   PAGE FLIP STATES
+===================================================== */
+
+.page{
+    opacity:0;
+    visibility:hidden;
+    transform:rotateY(-180deg);
+    z-index:1;
+}
+
+.page.active{
+    opacity:1;
+    visibility:visible;
+    transform:rotateY(0deg);
+    z-index:10;
+}
+
+
+/* =====================================================
+   LETTER PAGE
+===================================================== */
+
+.letters{
+    text-align:center;
+}
+
+.letters h1{
+
+    font-family:'Cinzel', serif;
+
+    font-size:3rem;
+
+    margin-bottom:50px;
+
+    color:#5d3217;
+
+}
+
+.letter-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:35px;
+
+    width:100%;
+
+    max-width:800px;
+
+}
+
+.letter{
+
+    background:#fffdf8;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+    transition:.35s;
+
+    border:2px solid #d8c6a6;
+
+}
+
+.letter:hover{
+
+    transform:translateY(-10px) scale(1.04);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.25);
+
+}
+
+.letter{
+
+    font-size:1.2rem;
+
+}
+
+.letter h3{
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+    color:#5d3217;
+
+}
+
+.letter p{
+
+    color:#6a5a4a;
+
+}
+
+
+/* =====================================================
+   FINAL PAGE
+===================================================== */
+
+.final-page{
+
+    text-align:center;
+
+    background:
+    radial-gradient(circle,#fff7eb,#f3e4c6);
+
+}
+
+.final-page h1{
+
+    font-family:'Cinzel', serif;
+
+    font-size:4rem;
+
+    color:#8d2525;
+
+}
+
+.final-page p{
+
+    margin-top:30px;
+
+    font-size:1.5rem;
+
+    max-width:700px;
+
+    line-height:1.8;
+
+}
+
+.cake{
+
+    width:260px;
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+    animation:floatCake 3s ease-in-out infinite;
+
+}
+
+@keyframes floatCake{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+#celebrate{
+
+    margin-top:35px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#b57a2d;
+
+    color:white;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+#celebrate:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.controls{
+
+    position:fixed;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:20px;
+
+    z-index:100;
+
+}
+
+.controls button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px 28px;
+
+    border-radius:40px;
+
+    background:#6a4120;
+
+    color:white;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+}
+
+.controls button:hover{
+
+    background:#8f5b31;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =====================================================
+   PARTICLE ANIMATION
+===================================================== */
+
+@keyframes floatParticle{
+
+    0%{
+
+        transform:translateY(100vh);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:.4;
+
+    }
+
+    100%{
+
+        transform:translateY(-120px);
+
+        opacity:0;
+
+    }
+
+}
+
+.floating-particles span{
+
+    animation:floatParticle linear infinite;
+
+}
+
+
+/* =====================================================
+   PAGE FADE
+===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.page.active .content,
+.page.active .image,
+.page.active h1,
+.page.active p,
+.page.active button,
+.page.active .letter-grid{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+.book{
+
+    width:92vw;
+
+    height:82vh;
+
+}
+
+.page{
+
+    padding:40px;
+
+}
+
+.cover h2{
+
+    font-size:2.6rem;
+
+}
+
+.content h1{
+
+    font-size:2.4rem;
+
+}
+
+.content p{
+
+    font-size:1.2rem;
+
+}
+
+.image img{
+
+    width:220px;
+
+    height:220px;
+
+}
+
+}
+
+
+@media(max-width:700px){
+
+.page{
+
+    padding:25px;
+
+}
+
+.cover h1{
+
+    font-size:1.3rem;
+
+}
+
+.cover h2{
+
+    font-size:2rem;
+
+}
+
+.cover p{
+
+    font-size:1rem;
+
+}
+
+.content h1{
+
+    font-size:1.8rem;
+
+}
+
+.content p{
+
+    font-size:1rem;
+
+}
+
+.image img{
+
+    width:170px;
+
+    height:170px;
+
+}
+
+.letters h1{
+
+    font-size:2rem;
+
+}
+
+.letter-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.controls{
+
+    bottom:15px;
+
+}
+
+.controls button{
+
+    padding:12px 18px;
+
+    font-size:.9rem;
+
+}
+
+.final-page h1{
+
+    font-size:2.5rem;
+
+}
+
+.cake{
+
+    width:180px;
+
+}
+
+}
+button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
