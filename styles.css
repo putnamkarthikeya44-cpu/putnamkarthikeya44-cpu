@@ -133,6 +133,14 @@ body{
     transform-style:preserve-3d;
 
 }
+@media (max-width: 768px){
+
+    .book{
+        width:95vw;
+        height:92vh;
+    }
+
+}
 
 
 /* =====================================================
