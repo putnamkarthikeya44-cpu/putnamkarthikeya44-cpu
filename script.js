@@ -127,45 +127,6 @@ document.addEventListener("keydown", e => {
 });
 
 
-/* ===========================================
-   LETTER MESSAGES
-=========================================== */
-
-const messages = [
-
-`Mom's Message
-
-Happy Birthday!
-
-May your smile always stay as bright as today.
-Thank you for spreading kindness wherever you go.`,
-
-`Dad's Message
-
-Wishing you a wonderful year filled with health,
-peace, happiness and countless blessings.`,
-
-`My Message
-
-Happy Birthday!
-
-Thank you for always being caring,
-supportive and loving.
-
-May every dream you have come true.
-Enjoy your special day! ❤️`
-
-];
-
-letters.forEach((letter, index) => {
-
-    letter.addEventListener("click", () => {
-
-        alert(messages[index]);
-
-    });
-
-});
 
 
 /* ===========================================
